@@ -1,0 +1,78 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/ea8e9cc4-f65e-4c0c-852d-a14e152a6b36/ # 
+title: Capstone-Project
+
+/users:
+  get:
+    description: get all user
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [{
+                  "id": 1,
+                  "first": "Adam",
+                  "last": "Bob",
+                  "department": "IIB"
+                }]
+  put:
+      description: update a single user
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                [{
+                    "id": 1,
+                    "first": "Adam",
+                    "last": "Bob",
+                    "department": "IIB"
+                  }]
+        404:
+          body:
+            application/json:
+              example:
+                "User Not Found"
+  post:
+    description: Create New User
+    responses:
+      200:
+        body:
+         application/json:
+            example:
+              {
+            "first": "Adam",
+            "last": "Bob",
+            "department": "IIB"
+          }
+  /{id}:
+    get:
+      description: Find a user
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                                [{
+                    "id": 1,
+                    "first": "Adam",
+                    "last": "Bob",
+                    "department": "IIB"
+                  }]
+        
+    delete:
+      description: delete a user
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                "user deleted"
+        404:
+          body:
+            application/json:
+              example:
+                "user not found!"
+              
+      
